@@ -33,6 +33,9 @@ function command(parameters) {
         message.channel.send('received calendar');
         console.log('calendar');
     }
+    else{
+        message.channel.send('Invalid command');
+    }
 }
 
 // Create an event listener for messages
@@ -43,7 +46,6 @@ client.on('message', message => {
         message.channel.send('pong');
     }
     else if(reCommand.test(message.content)) {
-        message.channel.send('matchar!');
         command({message: message, s: message.content});
     }
 });
